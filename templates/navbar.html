@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="d-flex flex-grow-1">
+        <span class="w-100 d-lg-none d-block"><!-- hidden spacer to center brand on mobile --></span>
+        <a class="navbar-brand" href="{% url 'landing_page' %}">
+            Django CRM
+        </a>
+        <div class="w-100 text-right">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#djangocrm">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+    <div class="collapse navbar-collapse flex-grow-1 text-right" id="djangocrm">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Agent</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'leads:lead_list' %}" class="nav-link">Lead</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Signup</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Login</a>
+            </li>
+        </ul>
+    </div>
+</nav>

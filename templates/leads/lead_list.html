@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+  <div class="col-12">
+    <div class="card ">
+      <div class="card-header">
+        <h6>Lead List</h6>
+      </div>
+      <div class="card-body txt-14">
+        <a href="{% url 'leads:lead_create' %}" class="btn btn-primary">Add new Lead</a>
+        <div class="table-responsive">
+          <table id="listlead" class="table table-hover table-striped">
+            <thead>
+              <tr>
+                
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Detail</th>
+                
+              </tr>
+            </thead>
+            <tbody >
+              {% for lead in leads %}
+              <tr>
+                
+                <td>{{lead.first_name}}</td>
+                <td>{{lead.last_name}}</td>
+                <td>{{lead.age}}</td>
+                
+                <td><a href="{% url 'leads:lead_detail' lead.pk %}" type="submit" class="btn btn-sm btn-outline-success">Detail</td>
+
+                {% endfor %}
+            </tbody>
+            
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
+
+<div class="row">
+  <div class="col-12">
+    <div class="card ">
+      <div class="card-header">
+        <h6>Lead List</h6>
+      </div>
+      <div class="card-body txt-14">
+        <div class="table-responsive">
+          <table id="listCustomer" class="table table-hover table-striped">
+            <thead>
+              <tr>
+                
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                
+              </tr>
+            </thead>
+            <tbody class="hw35">
+              {% for lead in leads %}
+              <tr>
+                
+                <td>{{lead.first_name}}</td>
+                <td>{{lead.last_name}}</td>
+                <td>{{lead.age}}</td>
+                
+                <td class="action-buttons"> <a href="#" title="View"> <i class="icon-eye"></i> </a> <a href="#"
+                    title="Update"> <i class="icon-pencil"></i> </a> </td>
+                {% endfor %}
+            </tbody>
+            
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
