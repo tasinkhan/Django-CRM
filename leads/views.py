@@ -1,13 +1,21 @@
 from django.shortcuts import render, redirect, reverse
+
 from django.core.mail import send_mail
 from .models import User, Agent, Lead
-from .forms import LeadForm
+from .forms import LeadForm, CustomUserCreationForm
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 
 # Create your views here.
 
 class LandingPageView(TemplateView):
     template_name = "landing_page.html"
+
+class SignUpView(CreateView):
+    template_name = "registration/signup.html"
+    form_class = CustomUserCreationForm
+
+    def get_success_url(self):
+        return reverse('login')
 
 class LeadListView(ListView):
     template_name = "leads/lead_list.html"
