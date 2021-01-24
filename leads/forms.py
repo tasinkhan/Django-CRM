@@ -1,5 +1,9 @@
 from django import forms
-from .models import Lead, Agent
+from .models import Lead, Agent, User
+from django.contrib.auth import get_user_model
+from django.contrib.auth.forms import  UserCreationForm, UsernameField
+
+User = get_user_model()
 
 class LeadForm(forms.ModelForm):
     first_name=  forms.CharField(required=True, widget=forms.TextInput(
@@ -15,3 +19,9 @@ class LeadForm(forms.ModelForm):
     class Meta:
         model = Lead
         fields = ('__all__')
+    
+class CustomUserCreationForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ("username",)
+        field_classes = {'username': UsernameField}
