@@ -13,7 +13,7 @@
     <div class="collapse navbar-collapse flex-grow-1 text-right" id="djangocrm">
         <ul class="navbar-nav ml-auto flex-nowrap">
             <li class="nav-item">
-                <a href="#" class="nav-link">Agent</a>
+                <a href="{% url 'agents:agent_list' %}" class="nav-link">Agent</a>
             </li>
             <li class="nav-item">
                 <a href="{% url 'leads:lead_list' %}" class="nav-link">Lead</a>

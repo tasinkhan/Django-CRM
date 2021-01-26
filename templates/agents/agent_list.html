@@ -4,31 +4,31 @@
   <div class="col-12">
     <div class="card ">
       <div class="card-header">
-        <h6>Lead List</h6>
+        <h6>Agent List</h6>
       </div>
       <div class="card-body txt-14">
-        <a href="{% url 'leads:lead_create' %}" class="btn btn-primary">Add new Lead</a>
+        <a href="{% url 'agents:agent_create' %}" class="btn btn-primary">Add new Agent</a>
         <div class="table-responsive">
           <table id="listlead" class="table table-hover table-striped">
             <thead>
               <tr>
                 
-                <th>First Name</th>
-                <th>Last Name</th>
+                <th>Agent Name</th>
+                <!-- <th>Last Name</th>
                 <th>Age</th>
-                <th>Detail</th>
+                <th>Detail</th> -->
                 
               </tr>
             </thead>
             <tbody >
-              {% for lead in leads %}
+              {% for agent in agents %}
               <tr>
                 
-                <td>{{lead.first_name}}</td>
-                <td>{{lead.last_name}}</td>
-                <td>{{lead.age}}</td>
+                <td>{{agent.user.username}}</td>
+                <!-- <td>{{agent.last_name}}</td>
+                <td>{{agent.age}}</td> -->
                 
-                <td><a href="{% url 'leads:lead_detail' lead.pk %}" type="submit" class="btn btn-sm btn-outline-success">Detail</td>
+                <td><a href="#" type="submit" class="btn btn-sm btn-outline-success">Detail</td>
 
                 {% endfor %}
             </tbody>
