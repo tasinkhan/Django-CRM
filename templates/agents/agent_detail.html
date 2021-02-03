@@ -1,7 +1,7 @@
  
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Lead | Lead Profile{% endblock %}
+{% block title %}Agent | Agent Profile{% endblock %}
 {% block content %}
 {% if messages %}
 <div class="alert alert-primary alert-dismissible fade show" role="alert">
@@ -23,7 +23,7 @@
                     <div class="col-md-9">
                         <div class="card flex-row profile-summary bdr-0">
                             <div class="basic-info">
-                                <h3 class="full-name">Deatil of lead {{lead.first_name }} {{lead.last_name }}</h3>
+                                <h3 class="full-name">Deatil of Agent {{agent.user.username }}</h3>
                                 
                             </div>
                         </div>
@@ -48,13 +48,13 @@
                             <div class="card-body">
                                 <div class="row profile-row">
                                     <div class="col-3">
-                                        <span class="profile-cat">Full Name</span>
+                                        <span class="profile-cat">User</span>
                                     </div>
                                     <div class="col-9">
-                                        <span class="profile-info">{{lead.first_name }} {{lead.last_name }}</span>
+                                        <span class="profile-info">{{agent.user.username }} </span>
                                     </div>
                                 </div>
-                                <div class="row profile-row">
+                                <!-- <div class="row profile-row">
                                     <div class="col-3">
                                         <span class="profile-cat">Agent</span>
                                     </div>
@@ -86,13 +86,14 @@
                             </div>    
                         </div>        
                     </div>            
-                </div> 
+                </div>  -->
                 
             </div>
         </div>
         <div class="button ml-3">
-        <a class="btn btn-sm btn-primary" href="{% url 'leads:lead_update' lead.pk %}">Edit</a><br> <br>
-        <a class="btn btn-sm btn-danger" href="{% url 'leads:lead_delete' lead.pk %}">Delete</a><br>
+            <a class="btn btn-sm btn-primary" href="{% url 'agents:agent_update' agent.pk %}">Edit</a><br> <br>
+            <a class="btn btn-sm btn-danger" href="{% url 'agents:agent_delete' agent.pk %}">Delete</a><br> <br>
+            
         </div>
         
     </div>
